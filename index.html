@@ -29,9 +29,19 @@
             Edad:
             <input type="number" id="edad" name="edad" class="form-control">
         </div>
+        <div>
+            <input type="submit" value="Agregar" class="btn btn-success btn-block">
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Agregando persona'
+            }
+        });
+    </script>
 </body>
 
 </html>
