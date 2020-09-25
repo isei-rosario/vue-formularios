@@ -10,27 +10,30 @@
 </head>
 
 <body>
-    <h1>Nueva Persona</h1>
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <div>
-            Nombre:
-            <input type="text" id="nombre" name="nombre" class="form-control">
-        </div>
-        <div>
-            Direccion:
-            <input type="text" id="direccion" name="direccion" class="form-control">
-        </div>
-        <div>
-            Documento:
-            <input type="number" id="documento" name="documento" class="form-control">
-        </div>
-        <div>
-            Edad:
-            <input type="number" id="edad" name="edad" class="form-control">
-        </div>
-        <div>
-            <input type="submit" value="Agregar" class="btn btn-success btn-block">
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div>
+                Nombre:
+                <input type="text" id="nombre" name="nombre" class="form-control">
+            </div>
+            <div>
+                Direccion:
+                <input type="text" id="direccion" name="direccion" class="form-control">
+            </div>
+            <div>
+                Documento:
+                <input type="number" id="documento" name="documento" class="form-control">
+            </div>
+            <div>
+                Edad:
+                <input type="number" id="edad" name="edad" class="form-control">
+            </div>
+            <hr>
+            <div>
+                <input type="submit" value="Agregar" class="btn btn-success btn-block">
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
