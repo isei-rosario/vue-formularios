@@ -16,25 +16,32 @@
         <div class="col-md-8">
             <div>
                 Nombre:
-                <input v-model="nombrePersona" type="text" id="nombre" name="nombre" class="form-control">
+                <input v-model="nombrePersona" type="text" id="nombre" name="nombre" class="form-control" required>
             </div>
             <div>
                 Direccion:
-                <input v-model="direccionPersona" type="text" id="direccion" name="direccion" class="form-control">
+                <input v-model="direccionPersona" type="text" id="direccion" name="direccion" class="form-control" required>
             </div>
             <div>
                 Documento:
-                <input v-model="documentoPersona" type="number" id="documento" name="documento" class="form-control">
+                <input v-model="documentoPersona" type="number" id="documento" name="documento" class="form-control" required>
             </div>
             <div>
                 Edad:
-                <input v-model="edadPersona" type="number" id="edad" name="edad" class="form-control">
+                <input v-model="edadPersona" type="number" id="edad" name="edad" class="form-control" required>
             </div>
             <hr>
             <div>
                 <input v-on:click="agregarPersona" type="submit" value="Agregar" class="btn btn-success btn-block">
             </div>
+            <div>
+                <input v-on:click="limpiar" type="submit" value="Limpiar" class="btn btn-warning btn-block">
+            </div>
         </div>
+        <p>Nombre: {{nombrePersonaAgregada}}</p>
+        <p>Documento: {{documentoPersonaAgregada}}</p>
+        <p>Direccion: {{direccionPersonaAgregada}}</p>
+        <p>Edad: {{edadPersonaAgregada}}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
@@ -43,13 +50,27 @@
             data: {
                 titulo: 'Agregando persona',
                 nombrePersona: '',
-                documentoPersona: 0,
+                documentoPersona: null,
                 direccionPersona: '',
-                edadPersona: 0
+                edadPersona: null,
+                nombrePersonaAgregada: '',
+                documentoPersonaAgregada: null,
+                direccionPersonaAgregada: '',
+                edadPersonaAgregada: null
             },
             methods: {
-                agregarPersona: function(){
-                    console.log (this.nombrePersona + this.direccionPersona );
+                agregarPersona: function () {
+                    this.nombrePersonaAgregada = this.nombrePersona;
+                    this.documentoPersonaAgregada = this.documentoPersona;
+                    this.direccionPersonaAgregada = this.direccionPersona;
+                    this.edadPersonaAgregada = this.edadPersona;
+                },
+                limpiar: function () {
+                    this.nombrePersonaAgregada = "";
+                    this.documentoPersonaAgregada = null;
+                    this.direccionPersonaAgregada = "";
+                    this.edadPersonaAgregada = null;
+                    
                 }
             }
         });
